@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "sceneId": 1,
+    "description": "brief scene description",
+    "player": "Player-Character",
+    "actor": "NPC",
+    "actorsInOrder": [
+      "player",
+      "actor"
+    ],
+    "location": "scene location",
+    "version": "1.0"
+  },
+  "dialogNodes": [
+    {
+      "player": {
+        "thinks": "Firstly, I'm thinking about how I'm the player character and therefore I have an array of options.",
+        "options": [
+          "Option one",
+          "Option two",
+          "Option three"
+        ],
+        "says": [
+          "I say one because I chose option one.",
+          "I say two because I chose option two.",
+          "I say three because I chose option three."
+        ]
+      }
+    },
+    {
+      "actor": {
+        "says": [
+          "I'm the NPC actor and I say ONE in reply to the player's option 1 speech.",
+          "I'm the NPC actor and I say TWO in reply to the player's option 2 speech.",
+          "I'm the NPC actor and I say THREE in reply to the player's option 3 speech."
+        ]
+      }
+    },
+    {
+      "player": {
+        "thinks": "On second thoughts, maybe I as player only have two options.",
+        "options": [
+          "Option one, on second thoughts.",
+          "Option two, on second thoughts."
+        ],
+        "says": [
+          "For my second time, I say ONE because I chose option one.",
+          "For my second time, I say TWO because I chose option two."
+        ]
+      }
+    },
+    {
+      "actor": {
+        "says": [
+          "Second time, NPC, I say ONE in reply to the player's option 1 speech.",
+          "Second time, NPC, I say TWO in reply to the player's option 2 speech."
+        ]
+      }
+    },
+    {
+      "player": {
+        "thinks": "Third time lucky, as player I still have two options.",
+        "options": [
+          "Option one, third time lucky.",
+          "Option two, third time lucky."
+        ],
+        "says": [
+          "Third time lucky, I say ONE because I chose option one.",
+          "Third time lucky, I say TWO because I chose option two."
+        ]
+      }
+    },
+    {
+      "actor": {
+        "says": [
+          "Thirdly, I'm the NPC and I only have one thing to say whatever."
+        ]
+      }
+    },
+    {
+      "player": {
+        "thinks": "4th time, as player I still have two options.",
+        "options": [
+          "Option one, 4th time.",
+          "Option two, 4th time."
+        ],
+        "says": [
+          "4th time, I say I chose ONE but will you reply?",
+          "4th time, I say I chose TWO but will you reply?"
+        ]
+      }
+    },
+    {
+      "actor": {
+        "says": [
+          ""
+        ]
+      }
+    },
+    {
+      "player": {
+        "thinks": "5th time, I have no options.",
+        "options": [],
+        "says": [
+          "5th time, I have only one thing to say, why do you not reply?"
+        ]
+      }
+    },
+    {
+      "actor": {
+        "says": [
+          "As the NPC, I will say something for my 5th time but I didn't want to say anything previously."
+        ]
+      }
+    },
+    {
+      "player": {
+        "thinks": "",
+        "options": [],
+        "says": [
+          "6th time, I will speak without thinking."
+        ]
+      }
+    },
+    {
+      "actor": {
+        "says": [
+          "This is my 6th time so, as the NPC, I will reply."
+        ]
+      }
+    },
+    {
+      "player": {
+        "thinks": "",
+        "options": [],
+        "says": [
+          "7th time, again I speak without thinking."
+        ]
+      }
+    },
+    {
+      "actor": {
+        "says": [
+          "I'm the NPC and I reply this is my 7th time."
+        ]
+      }
+    },
+    {
+      "player": {
+        "thinks": "For the 8th time, I'm going to do some more thinking, with two options.",
+        "options": [
+          "Option one, 8th time.",
+          "Option two, 8th time."
+        ],
+        "says": [
+          "8th time, I say I chose ONE. What have you to say to that?",
+          "8th time, I say I chose TWO. What have you to say to that?"
+        ]
+      }
+    },
+    {
+      "actor": {
+        "says": [
+          "I NPC say this to ONE for the 8th time.",
+          "I NPC say this to TWO for the 8th time."
+        ]
+      }
+    },
+    {
+      "player": {
+        "thinks": "",
+        "options": [
+
+        ],
+        "says": [
+          "This is the last thing as player I'm going to say because NPC actor said ONE previously.",
+          "This is the last thing as player I'm going to say because NPC actor said TWO previously."
+        ]
+      }
+    },
+    {
+      "actor": {
+        "says": [
+          "I NPC say ONE for the last time in reply to player saying one.",
+          "I NPC say TWO for the last time in reply to player saying two."
+        ]
+      }
+    }
+  ]
+}

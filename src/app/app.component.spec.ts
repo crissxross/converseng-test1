@@ -15,6 +15,6 @@ describe('App: Conversengine', () => {
 
   it('should have as title \'app works!\'',
     inject([AppComponent], (app: AppComponent) => {
-      expect(app.title).toEqual('conversengine app works!');
+      expect(app.title).toEqual('conversengine');
     }));
 });

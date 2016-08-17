@@ -1,4 +1,18 @@
-<h1>
-  {{title}}
-</h1>
-<p>NOTE: added normalize.css - now need to add my own styles and get to work!</p>
+<div class="wrapper">
+  <header>
+    <nav>
+      <ul>
+        <li><a [routerLink]="['/home']" routerLinkActive="active">Home</a></li>
+        <li><a [routerLink]="['/scene']" routerLinkActive="active">Scene</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+
+    <router-outlet></router-outlet>
+
+  </main>
+  <footer>
+    {{title}}
+  </footer>
+</div>
