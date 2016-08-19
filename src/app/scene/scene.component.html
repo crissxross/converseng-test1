@@ -2,4 +2,10 @@
 <app-player></app-player>
 <footer>
   <p>scene works!</p>
+  <ul>
+    <li *ngFor="let node of dialogNodes">
+      {{node.npc | json}}
+      {{node.player | json}}
+    </li>
+  </ul>
 </footer>
