@@ -9,8 +9,9 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 
 import { SceneModule } from './scene/scene.module';
+import { SharedModule } from './shared/shared.module';
 
-import { ScenedataService } from './shared/scenedata.service';
+// import { ScenedataService } from './shared/scenedata.service';
 
 @NgModule({
   declarations: [
@@ -23,11 +24,13 @@ import { ScenedataService } from './shared/scenedata.service';
     FormsModule,
     HttpModule,
     routing,
-    SceneModule
+    SceneModule,
+    // SharedModule
+    SharedModule.forRoot()
   ],
   providers: [
     appRoutingProviders,
-    ScenedataService
+    // ScenedataService
   ],
   entryComponents: [AppComponent],
   bootstrap: [AppComponent]

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+// import { CommonModule } from '@angular/common';
+import { SharedModule } from '../shared/shared.module';
 
 import { SceneComponent } from './scene.component';
 import { ActorComponent } from './actor.component';
@@ -9,7 +10,8 @@ import { sceneRouting } from './scene.routing';
 
 @NgModule({
   imports: [
-    CommonModule,
+    // CommonModule,
+    SharedModule,
     sceneRouting
   ],
   declarations: [

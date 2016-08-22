@@ -9,12 +9,16 @@ export class ScenedataService {
 
   constructor(private http: Http) { }
 
+  // NOTE: http.get returns an Observable emitting Response objects
+
   getSceneDialog(): Observable<any> {
     return this.http.get(this.scenedataUrl)
       .map(this.extractData)
       .catch(this.handleError);
   }
+// NOTE: The result of map is also an Observable that emits a JSON object
 
+// Not sure I like this way of doing it - i.e. extractData
   private extractData(res: Response) {
     let body = res.json();
     return body.dialog || {};
