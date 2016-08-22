@@ -8,18 +8,21 @@ import { ScenedataService } from '../shared/scenedata.service';
 })
 export class SceneComponent implements OnInit {
   errorMessage: string;
-  dialogNodes;
+  convoTurns;
 
   constructor(private scenedataService: ScenedataService) { }
 
   ngOnInit() {
-    this.getSceneDialog();
+    this.getSceneConvo();
   }
 
-  getSceneDialog() {
-    this.scenedataService.getSceneDialog()
+  getSceneConvo() {
+    this.scenedataService.getSceneConvo()
+      // .do(data => console.log(data))
+      // .mergeMap(data => data)
+      .do(data => console.log(data))
       .subscribe(
-      dialogNodes => this.dialogNodes = dialogNodes,
+      convoTurns => this.convoTurns = convoTurns,
       error => this.errorMessage = <any>error);
   }
 

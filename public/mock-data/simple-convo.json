@@ -1,0 +1,64 @@
+{
+  "convo": [
+    {
+      "actor": "npc",
+      "says": [
+        "n1 This is NPC's first speech"
+      ]
+    },
+    {
+      "actor": "player",
+      "thinks": [
+        "p1 thinks a first thought."
+      ],
+      "says": [
+        "P1 This is player's first speech"
+      ]
+    },
+    {
+      "actor": "npc",
+      "says": [
+        "n2 This is NPC's second speech"
+      ]
+    },
+    {
+      "actor": "player",
+      "thinks": [
+        "p2 thinks a second thought."
+      ],
+      "says": [
+        "P2 This is player's second speech"
+      ]
+    },
+    {
+      "actor": "npc",
+      "says": [
+        "n3 This is NPC's third speech"
+      ]
+    },
+    {
+      "actor": "player",
+      "thinks": [
+        "p3 thinks a third thought."
+      ],
+      "says": [
+        "P3 This is player's third speech"
+      ]
+    },
+    {
+      "actor": "npc",
+      "says": [
+        "n4 This is NPC's fourth speech"
+      ]
+    },
+    {
+      "actor": "player",
+      "thinks": [
+        "p4 thinks a fourth thought."
+      ],
+      "says": [
+        "P4 This is player's fourth speech"
+      ]
+    }
+  ]
+}

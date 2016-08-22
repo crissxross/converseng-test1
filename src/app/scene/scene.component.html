@@ -1,11 +1,15 @@
 <app-actor></app-actor>
 <app-player></app-player>
 <footer>
-  <p>scene works!</p>
+  <small>scene</small>
   <ul>
-    <li *ngFor="let node of dialogNodes">
-      {{node.npc | json}}
-      {{node.player | json}}
+    <li *ngFor="let turn of convoTurns">
+      {{turn.actor}}:
+      <ul>
+        <li *ngIf="turn.thinks"><em> * {{turn.thinks}}</em></li>
+      </ul>
+      {{turn.says}}
     </li>
   </ul>
+  <!--{{convoTurns}}-->
 </footer>
