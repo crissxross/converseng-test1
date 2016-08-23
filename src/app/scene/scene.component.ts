@@ -3,7 +3,25 @@ import { ScenedataService } from '../shared/scenedata.service';
 
 @Component({
   // selector: 'app-scene', // unnecessary because via router
-  templateUrl: 'scene.component.html',
+  template: `
+    <app-actor [aTurn]="actorTurns"></app-actor>
+    <app-player [pTurn]="playerTurns"
+                [pThought]="playerThought"
+                [pOptions]="playerOptions"></app-player>
+    <footer>
+      <small>scene</small>
+      <ul>
+        <li *ngFor="let turn of convoTurns">
+          {{turn.actor}}:
+          <ul>
+            <li *ngIf="turn.thinks"><em> * {{turn.thinks}}</em></li>
+          </ul>
+          {{turn.says}}
+        </li>
+      </ul>
+      <!--{{convoTurns}}-->
+    </footer>
+  `,
   styleUrls: ['scene.component.css']
 })
 export class SceneComponent implements OnInit {
