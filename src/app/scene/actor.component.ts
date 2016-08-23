@@ -2,7 +2,14 @@ import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-actor',
-  templateUrl: 'actor.component.html',
+  template: `
+    <div class="actor-wrapper">
+      <p class="actor-speaks">
+      <!--{{ aTurn | async | json }}-->
+        {{ aTurn }}
+      </p>
+    </div>
+  `,
   styleUrls: ['actor.component.css']
 })
 export class ActorComponent implements OnInit {
