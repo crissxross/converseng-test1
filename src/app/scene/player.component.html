@@ -1,11 +1,14 @@
 <div class="player-wrapper">
-  <p class="player-speaks">Player says...</p>
+  <p class="player-speaks">
+    <!--{{ pTurn | async | json }}-->
+    {{ pTurn }}
+  </p>
 <div class="thinks">
-    <p>(thinks) player works!</p>
+    <p>(thinks) {{ pThought }}</p>
     <div class="options">
       <ul>
-        <li>
-          <button>option</button>
+        <li *ngFor="let option of pOptions">
+          <button>{{ option }}</button>
         </li>
       </ul>
     </div>

@@ -1,5 +1,8 @@
-<app-actor></app-actor>
-<app-player></app-player>
+<app-actor [aTurn]="actorTurns"></app-actor>
+<app-player [pTurn]="playerTurns"
+            [pThought]="playerThought"
+            [pOptions]="playerOptions">
+            </app-player>
 <footer>
   <small>scene</small>
   <ul>

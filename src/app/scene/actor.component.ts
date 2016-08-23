@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-actor',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['actor.component.css']
 })
 export class ActorComponent implements OnInit {
+  @Input() aTurn;
 
   constructor() { }
 

@@ -14,13 +14,13 @@ export class ScenedataService {
   getSceneConvo(): Observable<any> {
     return this.http.get(this.scenedataUrl)
       .map(this.extractData)
+      // NOTE: alternatively, can do:
       // .map(response => response.json().convo)
       // .do(convo => console.log(convo))
       .catch(this.handleError);
   }
-// NOTE: The result of map is also an Observable that emits a JSON object
+// NOTE (above): the result of map is also an Observable that emits a JSON object
 
-// Not sure I like this way of doing it - i.e. extractData
   private extractData(res: Response) {
     let body = res.json();
     console.log('extractData: ', body);
