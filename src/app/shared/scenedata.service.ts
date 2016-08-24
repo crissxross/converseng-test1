@@ -9,7 +9,8 @@ export class ScenedataService {
 
   constructor(private http: Http) { }
 
-  // NOTE: http.get returns an Observable emitting Response objects
+  // NOTE: http.get returns an Observable emitting Response objects.
+  // The result of map is also an Observable that emits a JSON object.
 
   getSceneConvo(): Observable<any> {
     return this.http.get(this.scenedataUrl)
@@ -19,7 +20,6 @@ export class ScenedataService {
       // .do(convo => console.log(convo))
       .catch(this.handleError);
   }
-// NOTE (above): the result of map is also an Observable that emits a JSON object
 
   private extractData(res: Response) {
     let body = res.json();

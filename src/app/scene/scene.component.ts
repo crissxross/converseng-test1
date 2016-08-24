@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ScenedataService } from '../shared/scenedata.service';
+import { ConvoService } from '../shared/convo.service';
 
 @Component({
   // selector: 'app-scene', // unnecessary because via router
@@ -9,7 +10,7 @@ import { ScenedataService } from '../shared/scenedata.service';
                 [pThought]="playerThought"
                 [pOptions]="playerOptions"></app-player>
     <footer>
-      <small>scene</small>
+      <p>{{sceneMeta}} scene</p>
       <ul>
         <li *ngFor="let turn of convoTurns">
           {{turn.actor}}:
@@ -19,7 +20,8 @@ import { ScenedataService } from '../shared/scenedata.service';
           {{turn.says}}
         </li>
       </ul>
-      <!--{{convoTurns}}-->
+      <hr color="grey">
+      {{ convoTurns | json }}
     </footer>
   `,
   styleUrls: ['scene.component.css']
@@ -33,7 +35,10 @@ export class SceneComponent implements OnInit {
   playerOptions: string[];
   sceneMeta;
 
-  constructor(private scenedataService: ScenedataService) { }
+  constructor(
+    private scenedataService: ScenedataService,
+    private convoService: ConvoService
+  ) { }
 
   ngOnInit() {
     this.getSceneConvo();
@@ -41,6 +46,7 @@ export class SceneComponent implements OnInit {
     this.getPlayerTurns();
     this.getPlayerThoughts();
     this.getPlayerOptions();
+    this.getTitle();
   }
 
   getSceneConvo() {
@@ -71,7 +77,11 @@ export class SceneComponent implements OnInit {
       'Option one?',
       'Or maybe choose option two?'
       // 'Or even option three?'
-    ]
+    ];
+  }
+// for testing:
+  getTitle() {
+    this.sceneMeta = this.convoService.getTitle();
   }
 
 }
