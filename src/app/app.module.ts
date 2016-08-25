@@ -32,7 +32,6 @@ import { SharedModule } from './shared/shared.module';
     appRoutingProviders,
     // ScenedataService
   ],
-  entryComponents: [AppComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule {

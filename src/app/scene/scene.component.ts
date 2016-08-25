@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ScenedataService } from '../shared/scenedata.service';
 import { ConvoService } from '../shared/convo.service';
 
 @Component({
@@ -35,10 +34,7 @@ export class SceneComponent implements OnInit {
   playerOptions: string[];
   sceneMeta;
 
-  constructor(
-    private scenedataService: ScenedataService,
-    private convoService: ConvoService
-  ) { }
+  constructor(private convoService: ConvoService) { }
 
   ngOnInit() {
     this.getSceneConvo();
@@ -50,7 +46,7 @@ export class SceneComponent implements OnInit {
   }
 
   getSceneConvo() {
-    this.scenedataService.getSceneConvo()
+    this.convoService.getSceneConvo()
       // NOTE: mergeMap is just my temporary test
       // .do(data => console.log('before mergeMap:', data))
       // .mergeMap(data => data)
@@ -69,13 +65,13 @@ export class SceneComponent implements OnInit {
   }
 
   getPlayerThoughts() {
-    this.playerThought = 'I\'m thinking player thoughts.';
+    this.playerThought = 'I\'m thinking player thoughts (test string).';
   }
 
   getPlayerOptions() {
     this.playerOptions = [
-      'Option one?',
-      'Or maybe choose option two?'
+      'Option one test?',
+      'Or testing longer option two?',
       // 'Or even option three?'
     ];
   }

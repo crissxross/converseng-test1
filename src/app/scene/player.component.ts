@@ -9,7 +9,7 @@ import { Component, OnInit, Input } from '@angular/core';
         {{ pTurn }}
       </p>
       <div class="thinks">
-        <p>(thinks) {{ pThought }}</p>
+        <p>{{ pThought }}</p>
         <div class="options">
           <ul>
             <li *ngFor="let option of pOptions">

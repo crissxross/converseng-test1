@@ -27,6 +27,7 @@
 npm-debug.log
 testem.log
 /typings
+myTASKS.todo
 
 # e2e
 /e2e/*.js
