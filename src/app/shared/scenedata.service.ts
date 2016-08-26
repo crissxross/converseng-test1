@@ -22,7 +22,7 @@ export class ScenedataService {
 
   private extractData(res: Response) {
     let body = res.json();
-    console.log('extractData: ', body);
+    console.log('extractData (body): ', body);
     return body || {};
   }
 

@@ -3,7 +3,7 @@
     {
       "actor": "npc",
       "says": [
-        "n1 This is NPC's first speech"
+        "1N-says NPC's first speech"
       ]
     },
     {
@@ -12,13 +12,13 @@
         "p1 thinks a first thought."
       ],
       "says": [
-        "P1 This is player's first speech"
+        "1P-says player's first speech"
       ]
     },
     {
       "actor": "npc",
       "says": [
-        "n2 This is NPC's second speech"
+        "2N-says NPC's second speech"
       ]
     },
     {
@@ -27,13 +27,13 @@
         "p2 thinks a second thought."
       ],
       "says": [
-        "P2 This is player's second speech"
+        "2P-says player's second speech"
       ]
     },
     {
       "actor": "npc",
       "says": [
-        "n3 This is NPC's third speech"
+        "3N-says NPC's third speech"
       ]
     },
     {
@@ -42,13 +42,13 @@
         "p3 thinks a third thought."
       ],
       "says": [
-        "P3 This is player's third speech"
+        "3P-says player's third speech"
       ]
     },
     {
       "actor": "npc",
       "says": [
-        "n4 This is NPC's fourth speech"
+        "4N-says NPC's fourth speech"
       ]
     },
     {
@@ -57,7 +57,7 @@
         "p4 thinks a fourth thought."
       ],
       "says": [
-        "P4 This is player's fourth speech"
+        "4P-says player's fourth speech"
       ]
     }
   ]

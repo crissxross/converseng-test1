@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConvoService } from '../shared/convo.service';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   // selector: 'app-scene', // unnecessary because via router
@@ -8,31 +9,35 @@ import { ConvoService } from '../shared/convo.service';
     <app-player [pTurn]="playerTurns"
                 [pThought]="playerThought"
                 [pOptions]="playerOptions"></app-player>
+    <p>peepsInterval: {{ peepsInterval | async }}</p>
     <footer>
-      <p>{{sceneMeta}} scene</p>
-      <ul>
-        <li *ngFor="let turn of convoTurns">
+      <p>{{sceneMeta}} scene --- interval counter: {{counter | async }}</p>
+      <!-- <ul>
+        <li *ngFor="let turn of convoTurns$ | async">
           {{turn.actor}}:
           <ul>
             <li *ngIf="turn.thinks"><em> * {{turn.thinks}}</em></li>
           </ul>
           {{turn.says}}
         </li>
-      </ul>
+      </ul> -->
       <hr color="grey">
-      {{ convoTurns | json }}
+      {{ convoTurns$ | async | json }}
     </footer>
   `,
   styleUrls: ['scene.component.css']
 })
 export class SceneComponent implements OnInit {
   errorMessage: string;
-  convoTurns;
+  // convoTurns;
+  convoTurns$: Observable<any>;
   actorTurns;
   playerTurns;
   playerThought: string;
   playerOptions: string[];
   sceneMeta;
+  counter;
+  peepsInterval;
 
   constructor(private convoService: ConvoService) { }
 
@@ -43,17 +48,16 @@ export class SceneComponent implements OnInit {
     this.getPlayerThoughts();
     this.getPlayerOptions();
     this.getTitle();
+    this.getInterval();
+    this.getPeepsAtInterval();
   }
 
   getSceneConvo() {
-    this.convoService.getSceneConvo()
-      // NOTE: mergeMap is just my temporary test
-      // .do(data => console.log('before mergeMap:', data))
-      // .mergeMap(data => data)
-      .do(data => console.log(data, 'isArray:', Array.isArray(data)))
-      .subscribe(
-      convoTurns => this.convoTurns = convoTurns,
-      error => this.errorMessage = <any>error);
+    this.convoTurns$ = this.convoService.getSceneConvo()
+      // .do(data => console.log(data, 'isArray:', Array.isArray(data)))
+      // .subscribe(
+      // convoTurns => this.convoTurns = convoTurns,
+      // error => this.errorMessage = <any>error);
   }
 
   getActorTurns() {
@@ -78,6 +82,14 @@ export class SceneComponent implements OnInit {
 // for testing:
   getTitle() {
     this.sceneMeta = this.convoService.getTitle();
+  }
+
+  getInterval() {
+    this.counter = this.convoService.getInterval();
+  }
+
+  getPeepsAtInterval() {
+    this.peepsInterval = this.convoService.getPeepsAtInterval();
   }
 
 }
