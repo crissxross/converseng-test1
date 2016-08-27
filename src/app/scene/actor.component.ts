@@ -5,8 +5,7 @@ import { Component, OnInit, Input } from '@angular/core';
   template: `
     <div class="actor-wrapper">
       <p class="actor-speaks">
-      <!--{{ aTurn | async | json }}-->
-        {{ aTurn }}
+      {{ aTurn | async }}
       </p>
     </div>
   `,

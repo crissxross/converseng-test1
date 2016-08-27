@@ -1,10 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-// don't know why I have to import interval again
-// import 'rxjs/add/observable/interval';
-// import 'rxjs/add/observable/from';
-// import 'rxjs/add/observable/combineLatest';
-import 'rxjs/Rx'; // adds ALL RxJS statics & operators to Observable
+// import 'rxjs/Rx'; // adds ALL RxJS statics & operators to Observable
+import '../rxjs-operators';
 
 import { ScenedataService } from './scenedata.service';
 import { Convoturn } from './convoturn.model';
@@ -12,21 +9,50 @@ import { Convoturn } from './convoturn.model';
 @Injectable()
 export class ConvoService {
   title = 'conversengine';
+  convo$: Observable<Convoturn[]>;
   interval$ = Observable.interval(2000);
+  // for testing only:
   people$ = Observable.from(['Anne', 'Bev', 'Carol', 'Diane', 'Elsie', 'Freda', 'Gillian', 'Heather', 'Iris', 'Jane', 'Karen']);
-  convo$: Observable<any>;
 
   constructor(private scenedata: ScenedataService) { }
 
   getSceneConvo() {
-   return this.scenedata.getSceneData()
+    return this.convo$ = this.scenedata.getSceneData()
       .map(data => data.convo)
-      // NOTE: mergeMap etc. is just my temporary test
-      .do(data => console.log('before mergeMap:', data))
-      .mergeMap(data => data)
-      // .map(data => data.says)
-      // .map(says => says[0])
-      .do(data => console.log('after:', data, 'isArray:', Array.isArray(data)));
+      .do(data => console.log('CALLED getSceneConvo:', data))
+      .share();
+  }
+
+  getActorTurns() {
+    return this.convo$.mergeMap(convo => convo)
+      .filter(turn => turn['actor'] === 'npc')
+      .map(turn => turn['says'][0])
+      .do(x => console.log('getActorTurns:', x))
+      .zip(this.interval$, (says, val) => says);
+  }
+
+  getPlayerTurns() {
+    return this.convo$.mergeMap(convo => convo)
+      .filter(turn => turn['actor'] === 'player')
+      .map(turn => turn['says'][0])
+      .do(x => console.log('getPlayerTurns:', x))
+      .zip(this.interval$, (says, val) => says);
+  }
+
+  getPlayerThoughts() {
+    return this.convo$.mergeMap(convo => convo)
+      .filter(turn => turn['actor'] === 'player')
+      .map(turn => turn['thinks'][0])
+      .do(x => console.log('getPlayerThoughts:', x))
+      .zip(this.interval$, (thinks, val) => thinks);
+  }
+
+  getPlayerOptions() {
+    return this.convo$.mergeMap(convo => convo)
+      .filter(turn => turn['actor'] === 'player')
+      .map(turn => turn['options'])
+      .do(x => console.log('getPlayerOptions:', x))
+      .zip(this.interval$, (options, val) => options);
   }
 
   getTitle() {
@@ -34,13 +60,25 @@ export class ConvoService {
   }
 
   getInterval() {
-    // return this.interval$;
     return this.people$.zip(this.interval$, (peep, val) => val);
+    // return this.interval$;
   }
 
   getPeepsAtInterval() {
-    // return Observable.zip(this.interval$, this.people$); // <-my first attempt
-    return this.people$.zip(this.interval$, (peep, val) => peep);
+    return this.people$.zip(this.interval$, (peep, val) => peep).share();
+    // return Observable.zip(this.interval$, this.people$); // <-this first attempt was wrong
   }
 
+// TEMPORARY experiment - for reference only:
+  // getSceneConvo() {
+  //   return this.convo$ = this.scenedata.getSceneData()
+  //     .map(data => data.convo)
+  //     .mergeMap(convo => convo)
+  //     .map(convoturn => convoturn['says'][0]) // <- either this
+  //     .map(convoturn => convoturn['thinks']) // <- or this
+  //     .do(data => console.log('getSceneConvo:', data))
+  //     .share();
+  // }
+
 }
+

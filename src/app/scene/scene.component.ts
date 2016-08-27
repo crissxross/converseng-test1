@@ -9,18 +9,10 @@ import { Observable } from 'rxjs/Observable';
     <app-player [pTurn]="playerTurns"
                 [pThought]="playerThought"
                 [pOptions]="playerOptions"></app-player>
-    <p>peepsInterval: {{ peepsInterval | async }}</p>
     <footer>
+      <p>peepsInterval: {{ peepsInterval | async }}... and peeps shared again: {{ peepsInterval | async | uppercase }}</p>
+      <hr color="grey">
       <p>{{sceneMeta}} scene --- interval counter: {{counter | async }}</p>
-      <!-- <ul>
-        <li *ngFor="let turn of convoTurns$ | async">
-          {{turn.actor}}:
-          <ul>
-            <li *ngIf="turn.thinks"><em> * {{turn.thinks}}</em></li>
-          </ul>
-          {{turn.says}}
-        </li>
-      </ul> -->
       <hr color="grey">
       {{ convoTurns$ | async | json }}
     </footer>
@@ -29,15 +21,14 @@ import { Observable } from 'rxjs/Observable';
 })
 export class SceneComponent implements OnInit {
   errorMessage: string;
-  // convoTurns;
   convoTurns$: Observable<any>;
   actorTurns;
   playerTurns;
-  playerThought: string;
-  playerOptions: string[];
-  sceneMeta;
-  counter;
-  peepsInterval;
+  playerThought;
+  playerOptions;
+  sceneMeta; // for testing
+  counter; // for testing only
+  peepsInterval; // for testing only
 
   constructor(private convoService: ConvoService) { }
 
@@ -53,32 +44,25 @@ export class SceneComponent implements OnInit {
   }
 
   getSceneConvo() {
-    this.convoTurns$ = this.convoService.getSceneConvo()
-      // .do(data => console.log(data, 'isArray:', Array.isArray(data)))
-      // .subscribe(
-      // convoTurns => this.convoTurns = convoTurns,
-      // error => this.errorMessage = <any>error);
+    this.convoTurns$ = this.convoService.getSceneConvo();
   }
 
   getActorTurns() {
-    this.actorTurns = 'Hello! I\'m the Actor (actorTurn test string).';
+    this.actorTurns = this.convoService.getActorTurns();
   }
 
   getPlayerTurns() {
-    this.playerTurns = 'Hi! I\'m the Player (playerTurn test string).';
+    this.playerTurns = this.convoService.getPlayerTurns();
   }
 
   getPlayerThoughts() {
-    this.playerThought = 'I\'m thinking player thoughts (test string).';
+    this.playerThought = this.convoService.getPlayerThoughts();
   }
 
   getPlayerOptions() {
-    this.playerOptions = [
-      'Option one test?',
-      'Or testing longer option two?',
-      // 'Or even option three?'
-    ];
+    this.playerOptions = this.convoService.getPlayerOptions();
   }
+
 // for testing:
   getTitle() {
     this.sceneMeta = this.convoService.getTitle();

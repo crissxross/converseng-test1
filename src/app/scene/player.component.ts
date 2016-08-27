@@ -5,14 +5,13 @@ import { Component, OnInit, Input } from '@angular/core';
   template: `
     <div class="player-wrapper">
       <p class="player-speaks">
-        <!--{{ pTurn | async | json }}-->
-        {{ pTurn }}
+        {{ pTurn | async }}
       </p>
       <div class="thinks">
-        <p>{{ pThought }}</p>
+        <p>{{ pThought | async }}</p>
         <div class="options">
           <ul>
-            <li *ngFor="let option of pOptions">
+            <li *ngFor="let option of pOptions | async">
               <button>{{ option }}</button>
             </li>
           </ul>

@@ -11,6 +11,10 @@
       "thinks": [
         "p1 thinks a first thought."
       ],
+      "options": [
+        "Option 1 for P1",
+        "Or option 2 for P1"
+      ],
       "says": [
         "1P-says player's first speech"
       ]
@@ -25,6 +29,10 @@
       "actor": "player",
       "thinks": [
         "p2 thinks a second thought."
+      ],
+      "options": [
+        "Option 1 for P2",
+        "Or option 2 for P2"
       ],
       "says": [
         "2P-says player's second speech"
@@ -41,6 +49,11 @@
       "thinks": [
         "p3 thinks a third thought."
       ],
+      "options": [
+        "Option 1 for P3",
+        "Or option 2 for P3",
+        "Plus a 3rd option for P3"
+      ],
       "says": [
         "3P-says player's third speech"
       ]
@@ -55,6 +68,10 @@
       "actor": "player",
       "thinks": [
         "p4 thinks a fourth thought."
+      ],
+      "options": [
+        "Option 1 for P4",
+        "Or option 2 for P4"
       ],
       "says": [
         "4P-says player's fourth speech"
