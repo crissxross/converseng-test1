@@ -6,12 +6,15 @@
 // Statics
 import 'rxjs/add/observable/throw';
 import 'rxjs/add/observable/interval';
+import 'rxjs/add/observable/timer';
 import 'rxjs/add/observable/from';
-import 'rxjs/add/observable/combineLatest';
+import 'rxjs/add/observable/fromEvent';
+import 'rxjs/add/observable/combineLatest'; // in use?
 
 // Operators
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/debounceTime'; // in use?
+import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/distinctUntilChanged'; // in use?
 import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/filter';

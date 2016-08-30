@@ -11,6 +11,7 @@ export class ConvoService {
   title = 'conversengine';
   convo$: Observable<Convoturn[]>;
   interval$ = Observable.interval(2000);
+  timer$ = Observable.timer(100, 2000);
   // for testing only:
   people$ = Observable.from(['Anne', 'Bev', 'Carol', 'Diane', 'Elsie', 'Freda', 'Gillian', 'Heather', 'Iris', 'Jane', 'Karen']);
 
@@ -23,36 +24,45 @@ export class ConvoService {
       .share();
   }
 
+  // NOTE - use another filter to get the appropriate says or thinks
+  // according to the index of option clicked
+  // OR should it be according to the op/vk/un type of option clicked?
+
+
   getActorTurns() {
     return this.convo$.mergeMap(convo => convo)
       .filter(turn => turn['actor'] === 'npc')
       .map(turn => turn['says'][0])
-      .do(x => console.log('getActorTurns:', x))
-      .zip(this.interval$, (says, val) => says);
+      // .do(x => console.log('getActorTurns:', x))
+      .zip(this.timer$, (says, delay, period) => says);
+      // .zip(this.interval$, (says, period) => says);
   }
 
   getPlayerTurns() {
     return this.convo$.mergeMap(convo => convo)
       .filter(turn => turn['actor'] === 'player')
       .map(turn => turn['says'][0])
-      .do(x => console.log('getPlayerTurns:', x))
-      .zip(this.interval$, (says, val) => says);
+      // .do(x => console.log('getPlayerTurns:', x))
+      .zip(this.interval$, (says, period) => says)
+      .delay(2000);
   }
 
   getPlayerThoughts() {
     return this.convo$.mergeMap(convo => convo)
       .filter(turn => turn['actor'] === 'player')
       .map(turn => turn['thinks'][0])
-      .do(x => console.log('getPlayerThoughts:', x))
-      .zip(this.interval$, (thinks, val) => thinks);
+      // .do(x => console.log('getPlayerThoughts:', x))
+      .zip(this.interval$, (thinks, period) => thinks)
+      .delay(500);
   }
 
   getPlayerOptions() {
     return this.convo$.mergeMap(convo => convo)
       .filter(turn => turn['actor'] === 'player')
       .map(turn => turn['options'])
-      .do(x => console.log('getPlayerOptions:', x))
-      .zip(this.interval$, (options, val) => options);
+      // .do(x => console.log('getPlayerOptions:', x))
+      .zip(this.interval$, (options, period) => options)
+      .delay(1000);
   }
 
   getTitle() {
@@ -60,12 +70,12 @@ export class ConvoService {
   }
 
   getInterval() {
-    return this.people$.zip(this.interval$, (peep, val) => val);
+    return this.people$.zip(this.interval$, (peep, period) => period);
     // return this.interval$;
   }
 
   getPeepsAtInterval() {
-    return this.people$.zip(this.interval$, (peep, val) => peep).share();
+    return this.people$.zip(this.interval$, (peep, period) => peep).share();
     // return Observable.zip(this.interval$, this.people$); // <-this first attempt was wrong
   }
 

@@ -12,7 +12,7 @@ import { Component, OnInit, Input } from '@angular/core';
         <div class="options">
           <ul>
             <li *ngFor="let option of pOptions | async">
-              <button>{{ option }}</button>
+              <button (click)="selectOption($event)">{{ option }}</button>
             </li>
           </ul>
         </div>
@@ -29,6 +29,10 @@ export class PlayerComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  selectOption(event) {
+    console.log('Clicked:', event.target.innerHTML);
   }
 
 }
