@@ -1,36 +1,30 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, ApplicationRef } from '@angular/core';
-// import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+import { CoreModule } from './core/core.module';
 import { routing, appRoutingProviders } from './app.routing';
 
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
 
+import { HomeModule } from './home/home.module';
 import { SceneModule } from './scene/scene.module';
-import { SharedModule } from './shared/shared.module';
-
-// import { ScenedataService } from './shared/scenedata.service';
+// import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent
-  ],
+  declarations: [ AppComponent ],
   imports: [
     BrowserModule,
-    // CommonModule,
     FormsModule,
     HttpModule,
+    CoreModule.forRoot(),
     routing,
     SceneModule,
+    HomeModule
     // SharedModule
-    SharedModule.forRoot()
   ],
   providers: [
     appRoutingProviders,
-    // ScenedataService
   ],
   bootstrap: [AppComponent]
 })

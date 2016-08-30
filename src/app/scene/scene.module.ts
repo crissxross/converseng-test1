@@ -1,17 +1,16 @@
 import { NgModule } from '@angular/core';
-// import { CommonModule } from '@angular/common';
-import { SharedModule } from '../shared/shared.module';
+import { CommonModule } from '@angular/common';
+// import { SharedModule } from '../shared/shared.module';
 
 import { SceneComponent } from './scene.component';
 import { ActorComponent } from './actor.component';
 import { PlayerComponent } from './player.component';
-
 import { sceneRouting } from './scene.routing';
 
 @NgModule({
   imports: [
-    // CommonModule,
-    SharedModule,
+    CommonModule,
+    // SharedModule,
     sceneRouting
   ],
   declarations: [

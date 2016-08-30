@@ -1,4 +1,5 @@
 import { Routes, RouterModule } from '@angular/router';
+// should this use ModuleWithProviders? see docs
 
 import { SceneComponent } from './scene.component';
 

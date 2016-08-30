@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ConvoService } from '../shared/convo.service';
+import { ConvoService } from '../core/convo.service';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
