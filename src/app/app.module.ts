@@ -17,7 +17,7 @@ import { SceneModule } from './scene/scene.module';
     BrowserModule,
     FormsModule,
     HttpModule,
-    CoreModule.forRoot(),
+    CoreModule,
     routing,
     SceneModule,
     HomeModule

@@ -1,26 +1,21 @@
-import { ModuleWithProviders, NgModule, Optional, SkipSelf} from '@angular/core';
-// import { CommonModule } from '@angular/common'; // only if needed
+import { NgModule, Optional, SkipSelf} from '@angular/core';
 
 import { ScenedataService } from './scenedata.service';
 import { ConvoService } from './convo.service';
+
+// CoreModule is a pure services module
+// as recommended in docs - https://angular.io/docs/ts/latest/cookbook/ngmodule-faq.html#!#q-module-recommendations
 
 @NgModule({
   imports: [],
   declarations: [],
   exports: [],
-  providers: []
+  providers: [
+    ScenedataService,
+    ConvoService
+  ]
 })
 export class CoreModule {
-
-  static forRoot(): ModuleWithProviders {
-    return {
-      ngModule: CoreModule,
-      providers: [
-        ScenedataService,
-        ConvoService
-      ]
-    };
-  }
 
   constructor (@Optional() @SkipSelf() parentModule: CoreModule) {
     if (parentModule) {

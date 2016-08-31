@@ -69,15 +69,16 @@ export class ConvoService {
     return this.title;
   }
 
-  getInterval() {
-    return this.people$.zip(this.interval$, (peep, period) => period);
-    // return this.interval$;
-  }
+// TEMPORARY FOR TESTING - for reference
+  // getInterval() {
+  //   return this.people$.zip(this.interval$, (peep, period) => period);
+  //   // return this.interval$;
+  // }
 
-  getPeepsAtInterval() {
-    return this.people$.zip(this.interval$, (peep, period) => peep).share();
-    // return Observable.zip(this.interval$, this.people$); // <-this first attempt was wrong
-  }
+  // getPeepsAtInterval() {
+  //   return this.people$.zip(this.interval$, (peep, period) => peep).share();
+  //   // return Observable.zip(this.interval$, this.people$); // <-this first attempt was wrong
+  // }
 
 // TEMPORARY experiment - for reference only:
   // getSceneConvo() {

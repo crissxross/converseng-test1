@@ -10,9 +10,10 @@ import { Observable } from 'rxjs/Observable';
                 [pThought]="playerThought"
                 [pOptions]="playerOptions"></app-player>
     <footer>
-      <p>peepsInterval: {{ peepsInterval | async }}... and peeps shared again: {{ peepsInterval | async | uppercase }}</p>
-      <hr color="grey">
-      <p>{{sceneMeta}} scene --- interval counter: {{counter | async }}</p>
+      <p>sceneMeta: {{sceneMeta}}</p>
+      <!-- <hr color="grey">
+      <p>peepsInterval: {{ peepsInterval | async }}... and peeps shared again: {{ peepsInterval | async | uppercase }} </p>
+      <p>interval counter: {{counter | async }}</p> -->
       <hr color="grey">
       {{ convoTurns$ | async | json }}
     </footer>
@@ -26,9 +27,9 @@ export class SceneComponent implements OnInit {
   playerTurns;
   playerThought;
   playerOptions;
-  sceneMeta; // for testing
-  counter; // for testing only
-  peepsInterval; // for testing only
+  sceneMeta; // just testing for now
+  // counter; // for testing only
+  // peepsInterval; // for testing only
 
   constructor(private convoService: ConvoService) { }
 
@@ -38,9 +39,9 @@ export class SceneComponent implements OnInit {
     this.getPlayerTurns();
     this.getPlayerThoughts();
     this.getPlayerOptions();
-    this.getTitle();
-    this.getInterval();
-    this.getPeepsAtInterval();
+    this.getTitle(); // just testing for now
+    // this.getInterval(); // for testing only
+    // this.getPeepsAtInterval(); // for testing only
   }
 
   getSceneConvo() {
@@ -63,17 +64,18 @@ export class SceneComponent implements OnInit {
     this.playerOptions = this.convoService.getPlayerOptions();
   }
 
-// for testing:
+// just testing for now:
   getTitle() {
     this.sceneMeta = this.convoService.getTitle();
   }
 
-  getInterval() {
-    this.counter = this.convoService.getInterval();
-  }
+// TEMPORARY testing
+  // getInterval() {
+  //   this.counter = this.convoService.getInterval();
+  // }
 
-  getPeepsAtInterval() {
-    this.peepsInterval = this.convoService.getPeepsAtInterval();
-  }
+  // getPeepsAtInterval() {
+  //   this.peepsInterval = this.convoService.getPeepsAtInterval();
+  // }
 
 }
