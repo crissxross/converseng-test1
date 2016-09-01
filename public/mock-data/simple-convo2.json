@@ -3,102 +3,105 @@
     {
       "actor": "npc",
       "says": [
-        {"op": "op 1N-says NPC's first speech (optimal)"},
-        {"vk": "vk 1N-says NPC's first speech (overkill)"},
-        {"un": "un 1N-says NPC's first speech (under par)"}
+        {"op": "OP 1N-says NPC's first speech (optimal)"},
+        {"vk": "VK 1N-says NPC's first speech (overkill)"},
+        {"un": "UN 1N-says NPC's first speech (under par)"}
       ]
     },
     {
       "actor": "player",
       "thinks": [
-        {"op": "op p1 thinks a first thought."},
-        {"vk": "vk p1 thinks a first thought"},
-        {"un": "un p1 thinks a first thought"}
+        {"op": "OP p1 thinks a first thought."},
+        {"vk": "VK p1 thinks a first thought"},
+        {"un": "UN p1 thinks a first thought"}
       ],
       "options": [
-        {"op": "op Option 1 for P1"},
-        {"vk": "vk option 2 for P1"}
+        {"op": "OP option 1 for P1"},
+        {"vk": ""},
+        {"un": "UN option 3 for P1"}
       ],
       "says": [
-        {"op": "op 1P-says player's first speech"},
-        {"vk": "vk 1P-says player's first speech"},
-        {"un": "un 1P-says player's first speech"}
+        {"op": "OP 1P-says player's first speech"},
+        {"vk": "VK 1P-says player's first speech"},
+        {"un": "UN 1P-says player's first speech"}
       ]
     },
     {
       "actor": "npc",
       "says": [
-        {"op": "op 2N-says NPC's second speech"},
-        {"vk": "vk 2N-says NPC's second speech"},
-        {"un": "un 2N-says NPC's second speech"}
+        {"op": "OP 2N-says NPC's second speech"},
+        {"vk": "VK 2N-says NPC's second speech"},
+        {"un": "UN 2N-says NPC's second speech"}
       ]
     },
     {
       "actor": "player",
       "thinks": [
-        {"op": "op p2 thinks a second thought."},
-        {"vk": "vk p2 thinks a second thought"},
-        {"un": "un p2 thinks a second thought"}
+        {"op": "OP p2 thinks a second thought."},
+        {"vk": "VK p2 thinks a second thought"},
+        {"un": "UN p2 thinks a second thought"}
       ],
       "options": [
-        {"op": "op Option 1 for P2"},
-        {"vk": "vk option 2 for P2"}
+        {"op": "OP option 1 for P2"},
+        {"vk": "VK option 2 for P2"},
+        {"un": "UN option 3 for P2"}
       ],
       "says": [
-        {"op": "op 2P-says player's second speech"},
-        {"vk": "vk 2P-says player's second speech"},
-        {"un": "un 2P-says player's second speech"}
+        {"op": "OP 2P-says player's second speech"},
+        {"vk": "VK 2P-says player's second speech"},
+        {"un": "UN 2P-says player's second speech"}
       ]
     },
     {
       "actor": "npc",
       "says": [
-        {"op": "op 3N-says NPC's third speech"},
-        {"vk": "vk 3N-says NPC's third speech"},
-        {"un": "un 3N-says NPC's third speech"}
+        {"op": "OP 3N-says NPC's third speech"},
+        {"vk": "VK 3N-says NPC's third speech"},
+        {"un": "UN 3N-says NPC's third speech"}
       ]
     },
     {
       "actor": "player",
       "thinks": [
-        {"op": "op p3 thinks a third thought."},
-        {"vk": "vk p3 thinks a third thought"},
-        {"un": "un p3 thinks a third thought"}
+        {"op": "OP p3 thinks a third thought."},
+        {"vk": "VK p3 thinks a third thought"},
+        {"un": "UN p3 thinks a third thought"}
       ],
       "options": [
-        {"op": "op Option 1 for P3"},
-        {"vk": "vk option 2 for P3"},
-        {"un": "un a 3rd option for P3"}
+        {"op": "OP option 1 for P3"},
+        {"vk": "VK option 2 for P3"},
+        {"un": "UN a 3rd option for P3"}
       ],
       "says": [
-        {"op": "op 3P-says player's third speech"},
-        {"vk": "vk 3P-says player's third speech"},
-        {"un": "un 3P-says player's third speech"}
+        {"op": "OP 3P-says player's third speech"},
+        {"vk": "VK 3P-says player's third speech"},
+        {"un": "UN 3P-says player's third speech"}
       ]
     },
     {
       "actor": "npc",
       "says": [
-        {"op": "op 4N-says NPC's fourth speech"},
-        {"vk": "vk 4N-says NPC's fourth speech"},
-        {"un": "un 4N-says NPC's fourth speech"}
+        {"op": "OP 4N-says NPC's fourth speech"},
+        {"vk": "VK 4N-says NPC's fourth speech"},
+        {"un": "UN 4N-says NPC's fourth speech"}
       ]
     },
     {
       "actor": "player",
       "thinks": [
-        {"op": "op p4 thinks a fourth thought."},
-        {"vk": "vk p4 thinks a fourth thought"},
-        {"un": "un p4 thinks a fourth thought"}
+        {"op": "OP p4 thinks a fourth thought."},
+        {"vk": "VK p4 thinks a fourth thought"},
+        {"un": "UN p4 thinks a fourth thought"}
       ],
       "options": [
-        {"op": "op Option 1 for P4"},
-        {"vk": "vk option 2 for P4"}
+        {"op": "OP option 1 for P4"},
+        {"vk": "VK option 2 for P4"},
+        {"un": ""}
       ],
       "says": [
-        {"op": "op 4P-says player's fourth speech."},
-        {"vk": "vk 4P-says player's fourth speech."},
-        {"un": "un 4P-says player's fourth speech."}
+        {"op": "OP 4P-says player's fourth speech."},
+        {"vk": "VK 4P-says player's fourth speech."},
+        {"un": "UN 4P-says player's fourth speech."}
       ]
     }
   ]

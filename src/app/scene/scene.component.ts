@@ -8,7 +8,11 @@ import { Observable } from 'rxjs/Observable';
     <app-actor [aTurn]="actorTurns"></app-actor>
     <app-player [pTurn]="playerTurns"
                 [pThought]="playerThought"
-                [pOptions]="playerOptions"></app-player>
+                [pOptions]="playerOptions"
+                [opOption]="opOption"
+                [vkOption]="vkOption"
+                [unOption]="unOption">
+                </app-player>
     <footer>
       <p>sceneMeta: {{sceneMeta}}</p>
       <!-- <hr color="grey">
@@ -27,6 +31,9 @@ export class SceneComponent implements OnInit {
   playerTurns;
   playerThought;
   playerOptions;
+  opOption;
+  vkOption;
+  unOption;
   sceneMeta; // just testing for now
   // counter; // for testing only
   // peepsInterval; // for testing only
@@ -39,6 +46,9 @@ export class SceneComponent implements OnInit {
     this.getPlayerTurns();
     this.getPlayerThoughts();
     this.getPlayerOptions();
+    this.getOpOption();
+    this.getVkOption();
+    this.getUnOption();
     this.getTitle(); // just testing for now
     // this.getInterval(); // for testing only
     // this.getPeepsAtInterval(); // for testing only
@@ -62,6 +72,18 @@ export class SceneComponent implements OnInit {
 
   getPlayerOptions() {
     this.playerOptions = this.convoService.getPlayerOptions();
+  }
+
+  getOpOption() {
+    this.opOption = this.convoService.getOpOption();
+  }
+
+  getVkOption() {
+    this.vkOption = this.convoService.getVkOption();
+  }
+
+  getUnOption() {
+    this.unOption = this.convoService.getUnOption();
   }
 
 // just testing for now:
