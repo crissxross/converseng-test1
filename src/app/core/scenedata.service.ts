@@ -6,7 +6,7 @@ import '../rxjs-operators';
 @Injectable()
 export class ScenedataService {
 
-  private scenedataUrl = 'mock-data/simple-convo2.json';
+  private scenedataUrl = 'mock-data/simple-convo3.json';
 
   constructor(private http: Http) { }
 

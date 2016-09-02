@@ -40,7 +40,8 @@ export class ConvoService {
   getActorTurns() {
     return this.convo$.mergeMap(convo => convo)
       .filter(turn => turn['actor'] === 'npc')
-      .map(turn => turn['says'][0]['op'])
+      .map(turn => turn['says'][0][1])
+      // .map(turn => turn['says'][0]['op'])
       // .do(x => console.log('getActorTurns:', x))
       .zip(this.timer$, (says, delay, period) => says);
       // .zip(this.interval$, (says, period) => says);
@@ -49,7 +50,7 @@ export class ConvoService {
   getPlayerTurns() {
     return this.convo$.mergeMap(convo => convo)
       .filter(turn => turn['actor'] === 'player')
-      .map(turn => turn['says'][0]['op'])
+      .map(turn => turn['says'][0][1])
       // .do(x => console.log('getPlayerTurns:', x))
       .zip(this.interval$, (says, period) => says)
       .delay(2000);
@@ -58,7 +59,7 @@ export class ConvoService {
   getPlayerThoughts() {
     return this.convo$.mergeMap(convo => convo)
       .filter(turn => turn['actor'] === 'player')
-      .map(turn => turn['thinks'][0]['op'])
+      .map(turn => turn['thinks'][0][1])
       // .do(x => console.log('getPlayerThoughts:', x))
       .zip(this.interval$, (thinks, period) => thinks)
       .delay(500);
@@ -73,6 +74,7 @@ export class ConvoService {
       .delay(1000);
   }
 
+  // For TESTING with simple-convo2.json:
   getOpOption() {
     return this.convo$.mergeMap(convo => convo)
       .filter(turn => turn['actor'] === 'player')
