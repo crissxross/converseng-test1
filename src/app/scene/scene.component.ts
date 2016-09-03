@@ -15,9 +15,6 @@ import { Observable } from 'rxjs/Observable';
                 </app-player>
     <footer>
       <p>sceneMeta: {{sceneMeta}}</p>
-      <!-- <hr color="grey">
-      <p>peepsInterval: {{ peepsInterval | async }}... and peeps shared again: {{ peepsInterval | async | uppercase }} </p>
-      <p>interval counter: {{counter | async }}</p> -->
       <hr color="grey">
       {{ convoTurns$ | async | json }}
     </footer>
@@ -35,8 +32,6 @@ export class SceneComponent implements OnInit {
   vkOption;
   unOption;
   sceneMeta; // just testing for now
-  // counter; // for testing only
-  // peepsInterval; // for testing only
 
   constructor(private convoService: ConvoService) { }
 
@@ -46,12 +41,7 @@ export class SceneComponent implements OnInit {
     this.getPlayerTurns();
     this.getPlayerThoughts();
     this.getPlayerOptions();
-    this.getOpOption();
-    this.getVkOption();
-    this.getUnOption();
     this.getTitle(); // just testing for now
-    // this.getInterval(); // for testing only
-    // this.getPeepsAtInterval(); // for testing only
   }
 
   getSceneConvo() {
@@ -74,30 +64,9 @@ export class SceneComponent implements OnInit {
     this.playerOptions = this.convoService.getPlayerOptions();
   }
 
-  getOpOption() {
-    this.opOption = this.convoService.getOpOption();
-  }
-
-  getVkOption() {
-    this.vkOption = this.convoService.getVkOption();
-  }
-
-  getUnOption() {
-    this.unOption = this.convoService.getUnOption();
-  }
-
 // just testing for now:
   getTitle() {
     this.sceneMeta = this.convoService.getTitle();
   }
-
-// TEMPORARY testing
-  // getInterval() {
-  //   this.counter = this.convoService.getInterval();
-  // }
-
-  // getPeepsAtInterval() {
-  //   this.peepsInterval = this.convoService.getPeepsAtInterval();
-  // }
 
 }

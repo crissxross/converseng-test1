@@ -13,8 +13,6 @@ export class ConvoService {
   // convo$: Observable<Convoturn[]>;
   interval$ = Observable.interval(2000);
   timer$ = Observable.timer(100, 2000);
-  // for testing only:
-  // people$ = Observable.from(['Anne', 'Bev', 'Carol', 'Diane', 'Elsie', 'Freda', 'Gillian', 'Heather', 'Iris', 'Jane', 'Karen']);
 
   constructor(private scenedata: ScenedataService) { }
 
@@ -106,28 +104,6 @@ export class ConvoService {
   getTitle() {
     return this.title;
   }
-
-// TEMPORARY FOR TESTING - for reference
-  // getInterval() {
-  //   return this.people$.zip(this.interval$, (peep, period) => period);
-  //   // return this.interval$;
-  // }
-
-  // getPeepsAtInterval() {
-  //   return this.people$.zip(this.interval$, (peep, period) => peep).share();
-  //   // return Observable.zip(this.interval$, this.people$); // <-this first attempt was wrong
-  // }
-
-// TEMPORARY experiment - for reference only:
-  // getSceneConvo() {
-  //   return this.convo$ = this.scenedata.getSceneData()
-  //     .map(data => data.convo)
-  //     .mergeMap(convo => convo)
-  //     .map(convoturn => convoturn['says'][0]) // <- either this
-  //     .map(convoturn => convoturn['thinks']) // <- or this
-  //     .do(data => console.log('getSceneConvo:', data))
-  //     .share();
-  // }
 
 }
 
