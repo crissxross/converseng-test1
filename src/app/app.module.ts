@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule, ApplicationRef } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { CoreModule } from './core/core.module';
@@ -12,7 +12,9 @@ import { SceneModule } from './scene/scene.module';
 // import { SharedModule } from './shared/shared.module';
 
 @NgModule({
-  declarations: [ AppComponent ],
+  declarations: [
+    AppComponent
+  ],
   imports: [
     BrowserModule,
     FormsModule,
@@ -28,6 +30,4 @@ import { SceneModule } from './scene/scene.module';
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule {
-
-}
+export class AppModule { }
