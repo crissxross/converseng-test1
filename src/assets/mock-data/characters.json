@@ -1,0 +1,25 @@
+{
+  "mainActors": [
+    "Hannah",
+    "Joel",
+    "Sarah"
+  ],
+  "playerCharacters": [
+    "Joel",
+    "Sarah"
+  ],
+  "npcs": [
+    "Hannah",
+    "Police Officer",
+    "Builder",
+    "Mike (Joel's colleague)",
+    "Sarah's mother",
+    "Sarah's father",
+    "Mrs Fiske (landlady)",
+    "Katy (surname?)",
+    "Market Trader",
+    "Antiques Dealer",
+    "Retro Dealer",
+    "Bric-a-brac Dealer"
+  ]
+}

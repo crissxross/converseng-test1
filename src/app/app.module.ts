@@ -12,11 +12,9 @@ import { HomeModule } from './home/home.module';
 import { SceneModule } from './scene/scene.module';
 // import { SharedModule } from './shared/shared.module';
 import { counterReducer } from './home/counter.reducer';
+import { castReducer } from './core/cast.reducer';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
     BrowserModule,
     FormsModule,
@@ -25,8 +23,14 @@ import { counterReducer } from './home/counter.reducer';
     routing,
     SceneModule,
     HomeModule,
-    StoreModule.provideStore({counter: counterReducer}, {counter: 0})
+    StoreModule.provideStore(
+      { counter: counterReducer, cast: castReducer },
+      { counter: 0 }
+    )
     // SharedModule
+  ],
+  declarations: [
+    AppComponent
   ],
   providers: [
     appRoutingProviders,
