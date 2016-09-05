@@ -1,0 +1,20 @@
+button {
+  margin: 10px;
+  padding: 10px 10px;
+  cursor: pointer;
+  color: #73CBE6;
+  text-decoration: none;
+  text-align: center;
+  /*display: inline-block;*/
+  background-color: #4d504a;
+  border: 0 none;
+  border-radius: 4px;
+}
+
+button:hover {
+  background-color: #666963;
+}
+
+button:focus {
+  outline: none;
+}
