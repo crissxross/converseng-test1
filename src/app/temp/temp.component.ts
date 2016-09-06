@@ -1,0 +1,48 @@
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { Store } from '@ngrx/store';
+import { INCREMENT, DECREMENT, RESET } from './counter.reducer';
+
+interface AppState {
+  counter: number;
+}
+
+@Component({
+  // selector: 'app-temp', // via router
+  // templateUrl: './temp.component.html',
+  template: `
+    <h2>TESTING ngrx/store:</h2>
+    <div>
+    <div>Current Count: {{ counter | async }}</div>
+    <button (click)="increment()">Increment</button>
+    <button (click)="decrement()">Decrement</button>
+    <button (click)="reset()">Reset</button>
+    <hr color="grey">
+    </div>
+  `,
+  // styleUrls: ['./temp.component.css']
+})
+export class TempComponent implements OnInit {
+  counter: Observable<any>;
+  // counter: Observable<number>; // this produced an error but it compiled
+
+  constructor(public store: Store<AppState>) {
+    this.counter = store.select('counter');
+  }
+
+  ngOnInit() {
+  }
+
+  increment() {
+    this.store.dispatch({ type: INCREMENT });
+  }
+
+  decrement() {
+    this.store.dispatch({ type: DECREMENT });
+  }
+
+  reset() {
+    this.store.dispatch({ type: RESET });
+  }
+
+}

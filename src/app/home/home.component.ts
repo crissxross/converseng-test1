@@ -1,29 +1,31 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
+// import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
-import { INCREMENT, DECREMENT, RESET } from './counter.reducer';
 import { CastlistService } from '../core/castlist.service';
 
-interface AppState {
-  counter: number;
-}
+// interface AppState { }
 
 @Component({
-  // selector: 'app-home', // unnecessary because via router
-  templateUrl: 'home.component.html',
+  template: `
+    <h1>{{title}}</h1>
+    <hr color="grey">
+    <h3>Cast List</h3>
+    <h4>Main Actors</h4>
+    <ul>
+      <li *ngFor="let actor of actors">{{ actor }}</li>
+    </ul>
+`,
   styleUrls: ['home.component.css']
 })
 export class HomeComponent implements OnInit {
   title = 'conversengine';
-  counter: Observable<any>;
-  // counter: Observable<number>; // this produced an error but it compiled
   actors;
 
   constructor(
-    public store: Store<AppState>,
+    // public store: Store<AppState>,
+    public store: Store<any>,
     public castlistService: CastlistService
   ) {
-    this.counter = store.select('counter');
     this.castlistService.getMainActors();
     this.store.select('cast')
       .subscribe(cast => {
@@ -32,18 +34,6 @@ export class HomeComponent implements OnInit {
    }
 
   ngOnInit() {
-  }
-
-  increment() {
-    this.store.dispatch({ type: INCREMENT });
-  }
-
-  decrement() {
-    this.store.dispatch({ type: DECREMENT });
-  }
-
-  reset() {
-    this.store.dispatch({ type: RESET });
   }
 
 }

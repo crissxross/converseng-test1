@@ -1,18 +1,7 @@
 <h1>{{title}}</h1>
-<p>Conversation engine - <em>work in progress!</em></p>
 <hr color="grey">
 <h3>Cast List</h3>
 <h4>Main Actors</h4>
 <ul>
   <li *ngFor="let actor of actors">{{ actor }}</li>
 </ul>
-<!-- -----Counter just for testing---- -->
-<br>
-<hr color="grey">
-<div>
-  <p>TESTING ngrx/store:</p>
-  <div>Current Count: {{ counter | async }}</div>
-  <button (click)="increment()">Increment</button>
-  <button (click)="decrement()">Decrement</button>
-  <button (click)="reset()">Reset</button>
-</div>
