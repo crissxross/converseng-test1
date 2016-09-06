@@ -7,13 +7,19 @@ import { routing, appRoutingProviders } from './app.routing';
 import { Store, StoreModule } from '@ngrx/store';
 
 import { AppComponent } from './app.component';
-
 import { HomeModule } from './home/home.module';
 import { SceneModule } from './scene/scene.module';
 import { TempModule } from './temp/temp.module';
 // import { SharedModule } from './shared/shared.module';
 import { counterReducer } from './temp/counter.reducer';
 import { castReducer } from './core/cast.reducer';
+
+/**
+ * NGRX
+ * In app's main module, import your reducers and use the
+ * StoreModule.provideStore(reducers, initialState)
+ * function to provide them to Angular's injector.
+ */
 
 @NgModule({
   imports: [
@@ -27,7 +33,7 @@ import { castReducer } from './core/cast.reducer';
     TempModule,
     StoreModule.provideStore(
       { counter: counterReducer, cast: castReducer },
-      { counter: 0 }
+      { counter: 0 } // initialState
     )
     // SharedModule
   ],

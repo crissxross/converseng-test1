@@ -3,13 +3,18 @@ import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import { INCREMENT, DECREMENT, RESET } from './counter.reducer';
 
+/**
+ * NGRX
+ * Inject the Store service into your components and services.
+ * The store.select method is used to obtain the appropriate
+ * slice(s) of state from your application store.
+ */
+
 interface AppState {
   counter: number;
 }
 
 @Component({
-  // selector: 'app-temp', // via router
-  // templateUrl: './temp.component.html',
   template: `
     <h2>TESTING ngrx/store:</h2>
     <div>
@@ -20,7 +25,6 @@ interface AppState {
     <hr color="grey">
     </div>
   `,
-  // styleUrls: ['./temp.component.css']
 })
 export class TempComponent implements OnInit {
   counter: Observable<any>;
