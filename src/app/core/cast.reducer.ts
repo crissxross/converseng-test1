@@ -1,19 +1,47 @@
 import { ActionReducer, Action } from '@ngrx/store';
+/**
+ * NGRX
+ * Create a reducer function for each data type you have
+ * in your application. The combination of these reducers
+ * will make up your application state.
+ */
 
-export const ADD_MAIN_ACTORS = 'ADD_MAIN_ACTORS';
-export const ADD_PLAYER_CHARACTERS = 'ADD_PLAYER_CHARACTERS';
-export const ADD_NPCS = 'ADD_NPCS';
+export const MAIN_ACTORS = 'MAIN_ACTORS';
+export const PLAYER_CHARACTERS = 'PLAYER_CHARACTERS';
+export const NPCS = 'NPCS';
 
 export const castReducer: ActionReducer<any> = (state = [], action: Action) => {
 
   switch (action.type) {
-    case ADD_MAIN_ACTORS:
+    case MAIN_ACTORS:
       return action.payload;
 
-    case ADD_PLAYER_CHARACTERS:
+    // case PLAYER_CHARACTERS:
+      // return action.payload;
+
+    // case NPCS:
+    //   return action.payload;
+
+    default:
+      return state;
+  }
+};
+
+export const playersReducer: ActionReducer<any> = (state = [], action: Action) => {
+
+  switch (action.type) {
+    case PLAYER_CHARACTERS:
       return action.payload;
 
-    case ADD_NPCS:
+    default:
+      return state;
+  }
+};
+
+export const npcReducer: ActionReducer<any> = (state = [], action: Action) => {
+
+  switch (action.type) {
+    case NPCS:
       return action.payload;
 
     default:

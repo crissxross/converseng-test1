@@ -7,7 +7,8 @@ import { INCREMENT, DECREMENT, RESET } from './counter.reducer';
  * NGRX
  * Inject the Store service into your components and services.
  * The store.select method is used to obtain the appropriate
- * slice(s) of state from your application store.
+ * slice(s) of state from your application store - see:
+ * StoreModule.provideStore(reducers, initialState) in app.module
  */
 
 interface AppState {

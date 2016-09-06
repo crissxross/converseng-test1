@@ -39,6 +39,7 @@ li {
 }
 button {
   flex: 1 100%;
+  color: #2E2E2C;
   background-color: #ADADA8;
   border: 2px solid #CCB;
   border-radius: 6px;
@@ -49,8 +50,8 @@ button {
   cursor: hand;
 }
 button:focus, button:hover {
+  color: #FEFEF6;
   background-color: #666963;
   border-color: #666963;
   outline: 0;
-  color: #FEFEF6;
 }

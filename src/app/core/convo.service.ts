@@ -23,16 +23,23 @@ export class ConvoService {
       .share();
   }
 
-  // NOTE - use another filter to get the appropriate says or thinks
-  // according to the index of option clicked
-  // OR should it be according to the op/vk/un type of option clicked?
+  /** NOTE:
+   * use another filter to get the appropriate
+   * says or thinks according to the index of option clicked
+   * OR should it be according to the op/vk/un type of option clicked?
+   */
 
-  // convo state stream:
-  // npc-says, p-think, p-options, user-clicks/chooses, p-says, npc-reacts, npc-says
-  // should i use rx repeat operator?
+  /** convo state stream:
+   * npc-says, p-think, p-options, user-clicks/chooses,
+   * p-says, npc-reacts, npc-says
+   * should i use rx repeat operator?
+   */
 
-  // Or do I need an observable (or two) of who is speaking and who is listening?
-  // ngrx Actions could emit who is speaking and listening
+  /**
+   * Or do I need an observable (or two) of who
+   * is speaking and who is listening?
+   * ngrx Actions could emit who is speaking and listening
+  */
 
 
   getActorTurns() {

@@ -12,7 +12,7 @@ import { SceneModule } from './scene/scene.module';
 import { TempModule } from './temp/temp.module';
 // import { SharedModule } from './shared/shared.module';
 import { counterReducer } from './temp/counter.reducer';
-import { castReducer } from './core/cast.reducer';
+import { castReducer, playersReducer, npcReducer } from './core/cast.reducer';
 
 /**
  * NGRX
@@ -32,8 +32,13 @@ import { castReducer } from './core/cast.reducer';
     HomeModule,
     TempModule,
     StoreModule.provideStore(
-      { counter: counterReducer, cast: castReducer },
-      { counter: 0 } // initialState
+      {
+        counter: counterReducer,
+        cast: castReducer,
+        players: playersReducer,
+        npcs: npcReducer
+      },
+      { counter: 0 } // initialState of counterReducer
     )
     // SharedModule
   ],
