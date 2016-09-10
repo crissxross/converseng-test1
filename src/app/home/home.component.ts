@@ -26,7 +26,7 @@ import { CastlistService } from '../core/castlist.service';
   styleUrls: ['home.component.css']
 })
 export class HomeComponent implements OnInit {
-  title = 'conversengine';
+  title = 'conversengine-test1';
   actors;
   players;
   npcs;
