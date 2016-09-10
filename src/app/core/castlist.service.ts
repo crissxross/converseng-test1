@@ -3,7 +3,7 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import '../rxjs-operators';
 import { Store } from '@ngrx/store';
-import { MAIN_ACTORS, PLAYER_CHARACTERS, NPCS } from './cast.reducer';
+import { MAIN_ACTORS, PLAYER_CHARACTERS, NPCS } from '../home/cast.reducer';
 
 @Injectable()
 export class CastlistService {
@@ -21,21 +21,21 @@ export class CastlistService {
       .catch(this.handleError);
   }
 
-  getMainActors() {
+  loadMainActors() {
     return this.castlist$
       .map(data => data.mainActors)
       .map(payload => ({ type: MAIN_ACTORS, payload: payload }))
       .subscribe(action => this.store.dispatch(action));
   }
 
-  getPlayerCharacters() {
+  loadPlayerCharacters() {
     return this.castlist$
       .map(data => data.playerCharacters)
       .map(payload => ({ type: PLAYER_CHARACTERS, payload: payload }))
       .subscribe(action => this.store.dispatch(action));
   }
 
-  getNpcs() {
+  loadNpcs() {
     return this.castlist$
       .map(data => data.npcs)
       .map(payload => ({ type: NPCS, payload: payload }))

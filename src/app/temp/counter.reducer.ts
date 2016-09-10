@@ -6,6 +6,13 @@ import { ActionReducer, Action } from '@ngrx/store';
  * in your application. The combination of these reducers
  * will make up your application state.
  */
+/**
+ * Action (defined in ngrx/store dispatcher.ts):
+ *  export interface Action {
+ *    type: string;
+ *    payload?: any;
+ *  }
+ */
 
 export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';

@@ -36,22 +36,22 @@ export class HomeComponent implements OnInit {
     public store: Store<any>,
     public castlistService: CastlistService
   ) {
-    // this.castlistService.getCastlist();
-    // this.castlistService.getMainActors();
+    this.castlistService.getCastlist();
+    // this.castlistService.loadMainActors();
     // this.actors = this.store.select('cast');
-    // this.castlistService.getPlayerCharacters();
+    // this.castlistService.loadPlayerCharacters();
     // this.players = this.store.select('players');
-    // this.castlistService.getNpcs();
+    // this.castlistService.loadNpcs();
     // this.npcs = this.store.select('npcs');
    }
 
   ngOnInit() {
-    this.castlistService.getCastlist();
-    this.castlistService.getMainActors();
+    // this.castlistService.getCastlist();
+    this.castlistService.loadMainActors();
+    this.castlistService.loadPlayerCharacters();
+    this.castlistService.loadNpcs();
     this.actors = this.store.select('cast');
-    this.castlistService.getPlayerCharacters();
     this.players = this.store.select('players');
-    this.castlistService.getNpcs();
     this.npcs = this.store.select('npcs');
   }
 

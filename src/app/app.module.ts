@@ -12,7 +12,7 @@ import { SceneModule } from './scene/scene.module';
 import { TempModule } from './temp/temp.module';
 // import { SharedModule } from './shared/shared.module';
 import { counterReducer } from './temp/counter.reducer';
-import { castReducer, playersReducer, npcReducer } from './core/cast.reducer';
+import { castReducer, playersReducer, npcReducer } from './home/cast.reducer';
 
 /**
  * NGRX
