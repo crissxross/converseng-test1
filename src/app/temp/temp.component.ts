@@ -11,7 +11,7 @@ import { INCREMENT, DECREMENT, RESET } from './counter.reducer';
  * StoreModule.provideStore(reducers, initialState) in app.module
  */
 
-interface AppState {
+interface CountState {
   counter: number;
 }
 
@@ -31,8 +31,8 @@ export class TempComponent implements OnInit {
   counter: Observable<any>;
   // counter: Observable<number>; // this produced an error but it compiled
 
-  constructor(public store: Store<AppState>) {
-    this.counter = store.select('counter');
+  constructor(public store: Store<CountState>) {
+    this.counter = store.select('counterReducer');
   }
 
   ngOnInit() {

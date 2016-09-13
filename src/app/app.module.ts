@@ -33,10 +33,10 @@ import { castReducer, playersReducer, npcReducer } from './home/cast.reducer';
     TempModule,
     StoreModule.provideStore(
       {
-        counter: counterReducer,
-        cast: castReducer,
-        players: playersReducer,
-        npcs: npcReducer
+        counterReducer: counterReducer,
+        castReducer: castReducer,
+        playersReducer: playersReducer,
+        npcsReducer: npcReducer
       },
       { counter: 0 } // initialState of counterReducer
     )

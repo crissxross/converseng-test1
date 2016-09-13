@@ -50,9 +50,9 @@ export class HomeComponent implements OnInit {
     this.castlistService.loadMainActors();
     this.castlistService.loadPlayerCharacters();
     this.castlistService.loadNpcs();
-    this.actors = this.store.select('cast');
-    this.players = this.store.select('players');
-    this.npcs = this.store.select('npcs');
+    this.actors = this.store.select('castReducer');
+    this.players = this.store.select('playersReducer');
+    this.npcs = this.store.select('npcsReducer');
   }
 
 }

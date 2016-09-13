@@ -18,8 +18,8 @@ export const INCREMENT = 'INCREMENT';
 export const DECREMENT = 'DECREMENT';
 export const RESET = 'RESET';
 
-export const counterReducer: ActionReducer<number> = (state, action: Action) => {
-  // initialState provided in app.module .provideStore
+export const counterReducer: ActionReducer<number> = (state = 0, action: Action) => {
+  // initialState can also be provided in app.module .provideStore
 
   switch (action.type) {
     case INCREMENT:
